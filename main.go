@@ -22,5 +22,5 @@ func main() {
 	// s := make([]byte, 3)
 	// fmt.Fscan(reader, &s)
 	// fmt.Println(string(s))
-	fmt.Println(windowSlide.MinimumWindowSubstring("ADOBEABCODEBANC", "ABC"))
+	fmt.Println(windowSlide.MinimumWindowSubstring("ADOBEABCODEBANC", "AOBC"))
 }

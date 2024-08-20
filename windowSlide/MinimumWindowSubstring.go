@@ -3,19 +3,23 @@ package windowSlide
 func MinimumWindowSubstring(s string, t string) string {
 	debetList := make(map[byte]int)
 	debet := len(t)
+	for _, v := range s {
+		debetList[byte(v)] = 0
+	}
 	for _, v := range t {
-		debetList[byte(v)] = -1
+		if _, ok := debetList[byte(v)]; ok {
+			debetList[byte(v)]--
+		}
 	}
 	ans := int(^uint(0) >> 1)
 	start := 0
 	for l, r := 0, 0; r < len(s); r++ {
-		// if _, ok := debetList[s[r]]; ok {
-
-		if debetList[s[r]] < 0 {
+		if _, ok := debetList[s[r]]; ok {
 			debetList[s[r]]++
-			debet--
+			if debetList[s[r]] == 0 {
+				debet--
+			}
 		}
-		// }
 		if debet == 0 {
 			for debetList[s[l]] > 0 {
 				debetList[s[l]]--
@@ -26,6 +30,7 @@ func MinimumWindowSubstring(s string, t string) string {
 				start = l
 			}
 		}
+
 	}
 	if ans == int(^uint(0)>>1) {
 		return ""
