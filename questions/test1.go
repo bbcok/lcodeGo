@@ -86,6 +86,8 @@ func DeleteAgainAndAgain(s string, p string){
 	
 }
 func main() {
-	fmt.Println("Hello, World!")
+	tree:=dataStruct.NewTreeNode(9)
+	
+	posOrderTraversal()
 
 }

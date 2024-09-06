@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"lcodego/dataStruct"
-	"lcodego/windowSlide"
 )
 
 func testKmp() {
@@ -22,5 +21,10 @@ func main() {
 	// s := make([]byte, 3)
 	// fmt.Fscan(reader, &s)
 	// fmt.Println(string(s))
-	fmt.Println(windowSlide.CanCompleteCircuit([]int{1, 2, 3, 4, 5}, []int{3, 4, 5, 1, 2}))
+	// fmt.Println(windowSlide.CanCompleteCircuit([]int{1, 2, 3, 4, 5}, []int{3, 4, 5, 1, 2}))
+	s := dataStruct.Stack[string]{}
+	s.Push("1wq2")
+	s.Push("2wq2")
+	s.Pop()
+	fmt.Println(s)
 }
