@@ -1,10 +1,10 @@
-package main
+package greed
 
 import (
 	"sort"
 )
 
-func findContentChildren(g []int, s []int) int {
+func FindContentChildren(g []int, s []int) int {
 	sort.Ints(g)
 	sort.Ints(s)
 	j := 0
@@ -14,7 +14,4 @@ func findContentChildren(g []int, s []int) int {
 		}
 	}
 	return j
-}
-func main() {
-	// findContentChildren()
 }

@@ -51,43 +51,42 @@ func getNextint(ints []int, index int) []int {
 
 }
 
-func DeleteAgainAndAgain(s string, p string){
-	stack1:=make([]int,0)
-	stack2:=make([]int,0)
+func DeleteAgainAndAgain(s string, p string) {
+	stack1 := make([]int, 0)
+	stack2 := make([]int, 0)
 
-	next:=dataStruct.GetNext(p)
-	n,m,x,y:=len(s),len(p),0,0
-	size:=0
-	for x<n{
-	    if s[x]==p[y]{
-	       stack1=append(stack1,x) 
-	       stack2=append(stack2,y)
-		   size++
-	       x++
-	       y++
-	    } else if y==0{
-			stack1=append(stack1,x) 
-			stack2=append(stack2,-1)
+	next := dataStruct.GetNext(p)
+	n, m, x, y := len(s), len(p), 0, 0
+	size := 0
+	for x < n {
+		if s[x] == p[y] {
+			stack1 = append(stack1, x)
+			stack2 = append(stack2, y)
 			size++
 			x++
-	    }else {
-			y=next[y]
+			y++
+		} else if y == 0 {
+			stack1 = append(stack1, x)
+			stack2 = append(stack2, -1)
+			size++
+			x++
+		} else {
+			y = next[y]
 		}
-		if(y==m){
-			size=size-m
-			if size<0{
-				y=0
-			}else {
-				y=stack2[size-1]+1
+		if y == m {
+			size = size - m
+			if size < 0 {
+				y = 0
+			} else {
+				y = stack2[size-1] + 1
 			}
-			
+
 		}
 	}
-	
+
 }
 func main() {
-	tree:=dataStruct.NewTreeNode(9)
-	
-	posOrderTraversal()
 
+	//fmt.Println(evalRPN([]string{"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"}))
+	fmt.Println(maxSlidingWindow([]int{1, 3, -1, -3, 5, 3, 6, 7}, 3))
 }
