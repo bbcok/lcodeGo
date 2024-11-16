@@ -12,3 +12,13 @@ func NewTreeNode(val int) *TreeNode {
 func insertNode(root *TreeNode, val int) *TreeNode {
 	return nil
 }
+func ConstructTree(nums []int) *TreeNode {
+	if len(nums) == 0 {
+		return nil
+	}
+	mid := len(nums) / 2
+	root := NewTreeNode(nums[mid])
+	root.Left = ConstructTree(nums[:mid])
+	root.Right = ConstructTree(nums[mid+1:])
+	return root
+}

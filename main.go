@@ -4,6 +4,7 @@ import (
 	"container/list"
 	"fmt"
 	"lcodego/dataStruct"
+	"lcodego/tree"
 )
 
 func testKmp() {
@@ -69,7 +70,16 @@ func testList() {
 	length := l.Len()
 	fmt.Println("Length of the list:", length)
 }
-
+func testTree() {
+	nums := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	treeNode := dataStruct.ConstructTree(nums)
+	res := tree.PreorderTraversal(treeNode)
+	str := ""
+	for _, v := range res {
+		str += fmt.Sprintf("%d ", v)
+	}
+	fmt.Println(str)
+}
 func main() {
 	// reader := bufio.NewReader(os.Stdin)
 	// s := make([]byte, 3)
@@ -81,5 +91,5 @@ func main() {
 	//s.Push("2wq2")
 	//s.Pop()
 	//fmt.Println(s)
-	testList()
+	testTree()
 }
