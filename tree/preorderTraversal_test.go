@@ -49,7 +49,14 @@ func TestList(t *testing.T) {
 	fmt.Println("链表长度:", length)
 }
 func TestBuildTree(t *testing.T) {
-	str := "1,2,null,null,3,4,null,null,5,null,null"
-	node := Deserialize(str)
-	PrintPreorder(node)
+	str := "[5,4,8,11,null,13,4,7,2,null,null,5,1]"
+	node := BuildTreeLevel(str)
+	strs := pathSum(node, 22)
+	fmt.Println(strs)
+}
+func TestFindMode(t *testing.T) {
+	str := "[0]"
+	node := BuildTreeLevel(str)
+	rtn := FindMode(node)
+	fmt.Println(rtn)
 }

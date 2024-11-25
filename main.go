@@ -80,6 +80,13 @@ func testTree() {
 	}
 	fmt.Println(str)
 }
+func TestFindMode() {
+	str := "[0]"
+	node := tree.BuildTreeLevel(str)
+	rtn := tree.FindMode(node)
+	fmt.Println(rtn)
+}
+
 func main() {
 	// reader := bufio.NewReader(os.Stdin)
 	// s := make([]byte, 3)
@@ -91,5 +98,5 @@ func main() {
 	//s.Push("2wq2")
 	//s.Pop()
 	//fmt.Println(s)
-	testTree()
+	TestFindMode()
 }
